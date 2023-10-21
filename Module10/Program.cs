@@ -3,7 +3,7 @@
     internal class Program
     {
 
-        //task 10.3.2
+        //task 10.3.3
         static void Main(string[] args)
         {
 
@@ -11,34 +11,31 @@
             Console.ReadKey();
         }
     }
-    public interface ICreatable
+
+    public interface IBook
     {
-        void Create();
+        void Read();
     }
 
-    public interface IDeletable
+    public interface IDevice
     {
-        void Delete();
+        void TurnOn();
+        void TurnOff();
     }
 
-    public interface IUpdatable
+    public class ElectronicBook : IBook, IDevice
     {
-        void Update();
-    }
-
-    public class Entity : ICreatable, IDeletable, IUpdatable
-    {
-        public void Create()
+        void IBook.Read()
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        void IDevice.TurnOff()
         {
             throw new NotImplementedException();
         }
 
-        public void Update()
+        void IDevice.TurnOn()
         {
             throw new NotImplementedException();
         }
