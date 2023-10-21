@@ -3,42 +3,39 @@
     internal class Program
     {
 
-        //task 10.3.3
+        //task 10.4.4
         static void Main(string[] args)
         {
+
+            User user = new User();
+            Account account = new Account();
+            IUpdater<Account> updater = new UserService();
+
+            UserService userService = new UserService();
+            userService.Update(user);
 
 
             Console.ReadKey();
         }
     }
-
-    public interface IBook
+    public class User
     {
-        void Read();
+
     }
 
-    public interface IDevice
+    public class Account : User
     {
-        void TurnOn();
-        void TurnOff();
+
     }
 
-    public class ElectronicBook : IBook, IDevice
+    public interface IUpdater<in T>
     {
-        void IBook.Read()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IDevice.TurnOff()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IDevice.TurnOn()
-        {
-            throw new NotImplementedException();
-        }
+        void Update(T entity);
     }
 
+
+    public class UserService : IUpdater <User>
+    {
+        public void Update(User entity) { }
+    }
 }
