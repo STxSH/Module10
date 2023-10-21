@@ -3,7 +3,7 @@
     internal class Program
     {
 
-        //task 10.3.1
+        //task 10.3.2
         static void Main(string[] args)
         {
 
@@ -11,37 +11,37 @@
             Console.ReadKey();
         }
     }
-
-    public interface IWriter
+    public interface ICreatable
     {
-        void Write();
+        void Create();
     }
 
-    public interface IReader
+    public interface IDeletable
     {
-        void Read();
+        void Delete();
     }
 
-    public interface IMailer
+    public interface IUpdatable
     {
-        void SendEmail();
+        void Update();
     }
 
-    public class FileMAnager : IWriter, IReader, IMailer
+    public class Entity : ICreatable, IDeletable, IUpdatable
     {
-        public void Read()
+        public void Create()
         {
             throw new NotImplementedException();
         }
 
-        public void SendEmail()
+        public void Delete()
         {
             throw new NotImplementedException();
         }
 
-        public void Write()
+        public void Update()
         {
             throw new NotImplementedException();
         }
     }
+
 }
