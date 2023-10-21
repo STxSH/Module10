@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             var logger = new Logger();
-            var calculator = new Calculator();
+            var calculator = new Calculator(logger);
             var userInput = new UserInput(logger);
 
             Console.WriteLine("Введите первое число:");

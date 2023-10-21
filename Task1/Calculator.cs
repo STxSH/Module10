@@ -8,8 +8,16 @@ namespace FinalTask
 {
     public class Calculator : ISum
     {
+        ILogger Logger { get; set; }
+
+        public Calculator(ILogger logger)
+        {
+            Logger = logger;
+        }
+
         public int Solve(int x, int y)
         {
+            Logger.Event($"Считаем сумму чисел {x} и {y}");
             return x + y;
         }
     }
