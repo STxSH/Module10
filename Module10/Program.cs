@@ -3,26 +3,20 @@
     internal class Program
     {
 
-        //task 10.2.2
+        //task 10.2.3
         static void Main(string[] args)
         {
-            Writer writer = new Writer();
-
-            ((IWriter)writer).Write();
-
-
         }
     }
-    public interface IWriter
+    public interface IWorker
     {
-        void Write();
+        public void Build();
     }
 
-    public class Writer : IWriter
+    public class Worker : IWorker
     {
-        void IWriter.Write ()
+        public void Build()
         {
-
         }
     }
 
